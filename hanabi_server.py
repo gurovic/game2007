@@ -5,7 +5,11 @@ from settings import PLAYERS_COUNT
 BLUE, GREEN, RED, YELLOW, WHITE = 0, 1, 2, 3, 4
 color_names = ['blue', 'green', 'red', 'yellow', 'white']
 
-PLAYERS_CARDS = 4
+if PLAYERS_COUNT < 4:
+    PLAYERS_CARDS = 5
+else:
+    PLAYERS_CARDS = 4
+
 MAX_HINTS = 8
 
 class Position:
