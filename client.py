@@ -1,17 +1,14 @@
 import socket
 import pickle
+from settings import IP, PORT, MESSAGE_SIZE, END_SYMBOL
 
 from hanabi_client import print_position, finish_game, move
 
-IP = '127.0.0.1'
 NAME = input()
-PORT = 2008
-MESSAGE_SIZE  = 10000
-END_SYMBOL = 'abacaba' 
 
 def recieve_data(sock, buffer):
     message = sock.recv(MESSAGE_SIZE)
-    buffer.extend(message.split(bytes(END_SYMBOL, encoding="utf-8"))[:-1])
+    buffer.extend(message.split(END_SYMBOL)[:-1])
     
 def next_command(buffer):
     result = buffer.pop(0)

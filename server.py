@@ -1,10 +1,8 @@
 import socket
 import pickle
+from settings import IP, PORT, PLAYERS_COUNT, END_SYMBOL, PLAYERS_COUNT
 from hanabi_server import *
 
-PLAYERS_COUNT = 2
-PORT = 2008
-END_SYMBOL = bytes('abacaba', encoding="utf-8")
 
 def server_start(players_count, port):
     sock = socket.socket()
