@@ -12,7 +12,7 @@ def move(client_position, players, player_num):
     if client_position.hints_count:
         print("  support [player's number] color_or_value")
     step = input()
-    while ('support ' + players_num) in step:
+    while ('support ' + str(players_num)) in step:
         print("You can't help yourself.")
         step = input()
     client_step = step.split()
