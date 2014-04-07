@@ -7,13 +7,14 @@ def finish_game(game_result):
 def move(client_position, players, player_num):
     print("YOUR TURN:")
     if len(client_position.players_hands[player_num]):
-        print('  put [card number]')
-        print('  discard [card number]')
+        print('  put card_number')
+        print('  discard card_number')
     if client_position.hints_count:
-        print("  support [player's number] [color or value]")
+        print("  support [player's number] color_or_value")
     client_step = input().split()
-    
-    if client_step[0] == 'support':
+    if client_step[0] == 'support' and len(client_step) == 2:
+        move = ['support', players[(playes_num + 1) % len(players)], int(client_step[1])]
+    elif client_step[0] == 'support':
         move = ['support', int(client_step[1]), client_step[2]]
     elif client_step[0] == 'discard':
         move = ['discard', int(client_step[1])]
