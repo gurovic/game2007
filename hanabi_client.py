@@ -11,7 +11,11 @@ def move(client_position, players, player_num):
         print('  discard card_number')
     if client_position.hints_count:
         print("  support [player's number] color_or_value")
-    client_step = input().split()
+    step = input()
+    while ('support ' + players_num) in step:
+        print("You can't help yourself.")
+        step = input()
+    client_step = step.split()
     if client_step[0] == 'support' and len(client_step) == 2:
         move = ['support', players[(playes_num + 1) % len(players)], int(client_step[1])]
     elif client_step[0] == 'support':
