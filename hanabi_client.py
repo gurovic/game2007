@@ -47,6 +47,10 @@ def print_position(client_position, players, client_player_num):
             print(str(player_num) + ':' + players[player_num] + "'s cards:")
             for cards_color in colors_and_cards(client_position.players_hands[player_num]):
                 print("--" + cards_color)
+            print('WHAT KNOWS THIS PLAYER:')
+            for i in range(len(client_position.players_hands[client_player_num])):
+                print(i, client_position.players_hands[client_player_num][i].hint)
+                 
     print('YOUR CARDS:') 
     for i in range(len(client_position.players_hands[client_player_num])):
         print(i, client_position.players_hands[client_player_num][i].hint)
