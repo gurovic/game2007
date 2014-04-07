@@ -1,7 +1,7 @@
 game2007
 ========
 
-framework for writing network multi-player games
+Framework for writing network multi-player games
 
 
 Правила игры Ханаби
