@@ -40,12 +40,12 @@ def move(client_position, players, player_num):
         elif (    client_step[0] == 'discard'
               and len(client_step) == 2
               and is_int(client_step[1])
-              and int(client_step[1]) in range(my_cards_quantity):
+              and int(client_step[1]) in range(my_cards_quantity)):
             move = ['discard', int(client_step[1])]
         elif (    client_step[0] == 'put'
               and len(client_step) == 2
               and is_int(client_step[1])
-              and int(client_step[1]) in range(my_cards_quantity):
+              and int(client_step[1]) in range(my_cards_quantity)):
             move = ['put', int(client_step[1])]
         else:
             print("Incorrect turn.")
