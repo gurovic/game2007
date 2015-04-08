@@ -1,0 +1,13 @@
+from tkinter import *
+from hanabi_server import colour_names
+
+desk = Canvas(width = 1280, height = 720, bg = "darkgreen")
+desk.pack()
+
+def card(card_number, color_num):
+    card = desk.create_rectangle(610, 500, 670, 600, fill = colour_names[colour_num])
+    number = desk.create_text(600, 510, text = "[card_number]", font = ("Times New Roman", "30")
+
+card(1, 3)
+
+mainloop()
