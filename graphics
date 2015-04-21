@@ -11,7 +11,7 @@ def create_desk():
     desk = Canvas(root, width = 1280, height = 720, bg = "darkgreen")
     hints = Label(root, width = 30, height = 44, bg = 'brown')
     
-    hints.pack(side = 'right')
+    hints.pack(side = 'right', fill = 'both')
     desk.pack()
     informations .pack()
 
