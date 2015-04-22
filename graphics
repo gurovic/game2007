@@ -26,3 +26,21 @@ select1.place(x = 320, y = 300)
 select2.place(x = 460, y = 300)
 select3.place(x = 600, y = 300)
 what_move.place(x = 321, y = 273)
+
+///////////////
+
+class Card:
+    def __init__(self, color, number):
+        self.color = color
+        self.number = number
+
+    def default(self):
+        self.color = 'darkgreen'
+        self.number = None
+
+def card_condition(card):
+    if card.color == 'darkgreen':
+        return default
+    else:
+        return card.color, card.number
+
