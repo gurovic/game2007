@@ -1,22 +1,28 @@
+
 from tkinter import *
-#from settings import PLAYERS_COUNT
-#from settings import IP, PORT, PLAYERS_COUNT, END_SYMBOL, PLAYERS_COUNT
-#from hanabi_server import *
 
+def support():
+    what_man = Label(root, font = ('times', 14), text = 'Выбери подсказку(нажми на цвет карты или на номер)', width = 42, height = 1, bg = 'yellow')
+    what_man.place(x = 600, y = 300)
 
-def create_desk():
-    root = Tk()
-    
-    informations = Label(root, text = 'Я солнышко! Красное как пельмень!', width = 159, height = 4, bg = 'brown')
-    desk = Canvas(root, width = 1280, height = 720, bg = "darkgreen")
-    hints = Label(root, width = 30, height = 44, bg = 'brown')
-    
-    hints.pack(side = 'right', fill = 'both')
-    desk.pack()
-    informations .pack()
+root = Tk()
 
-    root.mainloop()
+players_list = 'Roma, Peta, Vasia'
+informations = Label(root, font = ('times', 14), text = players_list, width = 128, height = 3, bg = 'brown')
+desk = Canvas(root, width = 1280, height = 720, bg = "darkgreen")
+hints = Label(root, width = 30, height = 44, bg = 'brown')
 
-#def do_move():
-    
-create_desk()
+hints.pack(side = 'right', fill = 'both')
+desk.pack()
+informations .pack()
+
+what_move = Label(root, font = ('times', 14), text = 'Выбери ход', width = 42, height = 1, bg = 'yellow')
+
+select1 = Button(root, text = 'Сделать подсказку', width = 20, height = 9, bg = 'lightyellow', comman = support)
+select2 = Button(root, text = 'Сбросить карту', width = 20, height = 9, bg = 'lightyellow')
+select3 = Button(root, text = 'Положить на стол', width = 20, height = 9, bg = 'lightyellow')
+
+select1.place(x = 320, y = 300)
+select2.place(x = 460, y = 300)
+select3.place(x = 600, y = 300)
+what_move.place(x = 321, y = 273)
