@@ -1,9 +1,29 @@
-
 from tkinter import *
 
 def support():
-    what_man = Label(root, font = ('times', 14), text = 'Выбери подсказку(нажми на цвет карты или на номер)', width = 42, height = 1, bg = 'yellow')
-    what_man.place(x = 600, y = 300)
+    what_man = Label(root, font = ('times', 20), text = 'Выбери подсказку(нажми на цвет карты или на номер)', width = 60, height = 1, bg = 'darkgreen')
+    what_man.place(x = 200, y = 550)
+    select1.place(x = -400, y = -400)
+    select2.place(x = -400, y = -400)
+    select3.place(x = -400, y = -400)   
+    what_move.place(x = -400, y = -400)
+    
+def discard():
+    what_discard = Label(root, font = ('times', 20), text = 'Выбери карту', width = 30, height = 1, bg = 'darkgreen')
+    what_discard.place(x = 400, y = 550)
+    select1.place(x = -400, y = -400)
+    select2.place(x = -400, y = -400)
+    select3.place(x = -400, y = -400)     
+    what_move.place(x = -400, y = -400)
+
+def put():
+    what_card = Label(root, font = ('times', 20), text = 'Выбери карту', width = 30, height = 1, bg = 'darkgreen')
+    what_card.place(x = 400, y = 550)
+    select1.place(x = -400, y = -400)
+    select2.place(x = -400, y = -400)
+    select3.place(x = -400, y = -400)    
+    what_move.place(x = -400, y = -400)
+
 
 root = Tk()
 
@@ -19,13 +39,15 @@ informations .pack()
 what_move = Label(root, font = ('times', 14), text = 'Выбери ход', width = 42, height = 1, bg = 'yellow')
 
 select1 = Button(root, text = 'Сделать подсказку', width = 20, height = 9, bg = 'lightyellow', comman = support)
-select2 = Button(root, text = 'Сбросить карту', width = 20, height = 9, bg = 'lightyellow')
-select3 = Button(root, text = 'Положить на стол', width = 20, height = 9, bg = 'lightyellow')
+select2 = Button(root, text = 'Сбросить карту', width = 20, height = 9, bg = 'lightyellow', comman = discard)
+select3 = Button(root, text = 'Положить на стол', width = 20, height = 9, bg = 'lightyellow', comman = put)
 
 select1.place(x = 320, y = 300)
 select2.place(x = 460, y = 300)
 select3.place(x = 600, y = 300)
 what_move.place(x = 321, y = 273)
+
+root.mainloop()
 
 ///////////////
 
