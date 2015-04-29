@@ -1,12 +1,26 @@
 from tkinter import *
 
 def support():
-    what_man = Label(root, font = ('times', 20), text = 'Выбери подсказку(нажми на цвет карты или на номер)', width = 60, height = 1, bg = 'darkgreen')
-    what_man.place(x = 200, y = 550)
+    what_card = Label(root, font = ('times', 20), text = 'Выбери карту', width = 60, height = 1, bg = 'darkgreen') 
+    what_card.place(x = 200, y = 550)
     select1.place(x = -400, y = -400)
     select2.place(x = -400, y = -400)
     select3.place(x = -400, y = -400)   
     what_move.place(x = -400, y = -400)
+    #далее если нажали на какую-то карту, то нужно её запомнить и сделать все остальное.
+    what_card.place(x = 200, y = 550)
+    what_support_number = Button(root, text = 'Подсказать номер карты', width = 20, height = 9, bg = 'lightyellow', comman = support_number)
+    what_support_coll = Button(root, text = 'Подсказать цвет карты', width = 20, height = 9, bg = 'lightyellow', comman = support_coll)
+    what_support_number.place(x = 320, y = 300)
+    what_support_coll.place(x = 800, y = 300)
+    
+def support_number():
+    what_support_number.place(x = -400, y = -400)
+    what_support_coll.place(x = -400, y = -400)
+    
+def support_coll():
+    what_support_number.place(x = -400, y = -400)
+    what_support_coll.place(x = -400, y = -400)
     
 def discard():
     what_discard = Label(root, font = ('times', 20), text = 'Выбери карту', width = 30, height = 1, bg = 'darkgreen')
@@ -30,11 +44,11 @@ root = Tk()
 players_list = 'Roma, Peta, Vasia'
 informations = Label(root, font = ('times', 14), text = players_list, width = 128, height = 3, bg = 'brown')
 desk = Canvas(root, width = 1280, height = 720, bg = "darkgreen")
-hints = Label(root, width = 30, height = 44, bg = 'brown')
+hints = Label(root, width = 30, height = 53, bg = 'brown')
 
-hints.pack(side = 'right', fill = 'both')
-desk.pack()
-informations .pack()
+hints.grid(row = 0, column = 1, rowspan = 4)
+desk.grid(row = 0, column = 0)
+informations.grid(row = 1, column = 0)
 
 what_move = Label(root, font = ('times', 14), text = 'Выбери ход', width = 42, height = 1, bg = 'yellow')
 
