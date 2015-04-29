@@ -43,40 +43,30 @@ players_list = 'Roma, Peta, Vasia'
 informations = Label(root, font = ('times', 14), text = players_list, width = 128, height = 3, bg = 'brown')
 desk = Canvas(root, width = 1280, height = 720, bg = "darkgreen")
 hints = Label(root, width = 30, height = 53, bg = 'brown')
-red = PhotoImage('/cards/red.gif')
-    yellow = PhotoImage('/cards/yellow.gif')
-    blue = PhotoImage('/cards/blue.gif')
-    green = PhotoImage('/cards/green.gif')
-    white = PhotoImage('/cards/white.gif')
-    one = PhotoImage('/cards/1.gif')
-    two = PhotoImage('/cards/2.gif')
-    three = PhotoImage('/cards/3.gif')
-    four = PhotoImage('/cards/4.gif')
-    five = PhotoImage('/cards/5.gif')
-    shirt = PhotoImage('/cards/shirt.gif')
 
 hints.grid(row = 0, column = 5, rowspan = 4)
 desk.grid(row = 0, column = 0, rowspan = 3, columnspan = 5)
 informations.grid(row = 3, column = 1)
 
-what_move = Label(root, font = ('times', 14), text = 'Выбери ход', width = 42, height = 1, bg = 'yellow')
+what_move = Label(root, font = ('times', 14), text = 'Выбери ход', width = 43, height = 1, bg = 'yellow')
 what_card = Label(root, font = ('times', 20), text = 'Выбери карту', width = 60, height = 1, bg = 'darkgreen') 
 
 what_support_number = Button(root, text = 'Подсказать номер карты', width = 20, height = 9, bg = 'lightyellow', comman = support_number)
 what_support_coll = Button(root, text = 'Подсказать цвет карты', width = 20, height = 9, bg = 'lightyellow', comman = support_coll)
 
-select1 = Button(root, text = 'Сделать подсказку', width = 20, height = 9, bg = 'lightyellow', comman = support)
-select2 = Button(root, text = 'Сбросить карту', width = 20, height = 9, bg = 'lightyellow', comman = discard)
-select3 = Button(root, text = 'Положить на стол', width = 20, height = 9, bg = 'lightyellow', comman = put)
+select1 = Button(root, text = 'Сделать подсказку', width = 21, height = 9, bg = 'lightyellow', comman = support)
+select2 = Button(root, text = 'Сбросить карту', width = 21, height = 9, bg = 'lightyellow', comman = discard)
+select3 = Button(root, text = 'Положить на стол', width = 21, height = 9, bg = 'lightyellow', comman = put)
 Card_Help = Button(root, text = 'Типо карта', width = 20, height = 9, bg = 'lightyellow', comman = kind_of_support)
 
 select1.place(x = 320, y = 300)
 select2.place(x = 460, y = 300)
 select3.place(x = 600, y = 300)
-what_move.place(x = 321, y = 273)
+what_move.place(x = 320, y = 273)
 Card_Help.place(x = 700, y = 100)
 
 root.mainloop()
+
 
 ///////////////
 
