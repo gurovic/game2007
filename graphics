@@ -1,19 +1,17 @@
 from tkinter import *
 
 def support():
-    what_card = Label(root, font = ('times', 20), text = 'Выбери карту', width = 60, height = 1, bg = 'darkgreen') 
     what_card.place(x = 200, y = 550)
     select1.place(x = -400, y = -400)
     select2.place(x = -400, y = -400)
     select3.place(x = -400, y = -400)   
     what_move.place(x = -400, y = -400)
-    #далее если нажали на какую-то карту, то нужно её запомнить и сделать все остальное.
-    what_card.place(x = 200, y = 550)
-    what_support_number = Button(root, text = 'Подсказать номер карты', width = 20, height = 9, bg = 'lightyellow', comman = support_number)
-    what_support_coll = Button(root, text = 'Подсказать цвет карты', width = 20, height = 9, bg = 'lightyellow', comman = support_coll)
+
+def kind_of_support():
+    what_card.place(x = -400, y = -400)
     what_support_number.place(x = 320, y = 300)
     what_support_coll.place(x = 800, y = 300)
-    
+
 def support_number():
     what_support_number.place(x = -400, y = -400)
     what_support_coll.place(x = -400, y = -400)
@@ -46,20 +44,26 @@ informations = Label(root, font = ('times', 14), text = players_list, width = 12
 desk = Canvas(root, width = 1280, height = 720, bg = "darkgreen")
 hints = Label(root, width = 30, height = 53, bg = 'brown')
 
-hints.grid(row = 0, column = 1, rowspan = 4)
-desk.grid(row = 0, column = 0)
-informations.grid(row = 1, column = 0)
+hints.grid(row = 0, column = 5, rowspan = 4)
+desk.grid(row = 0, column = 0, rowspan = 3, columnspan = 5)
+informations.grid(row = 3, column = 1)
 
 what_move = Label(root, font = ('times', 14), text = 'Выбери ход', width = 42, height = 1, bg = 'yellow')
+what_card = Label(root, font = ('times', 20), text = 'Выбери карту', width = 60, height = 1, bg = 'darkgreen') 
+
+what_support_number = Button(root, text = 'Подсказать номер карты', width = 20, height = 9, bg = 'lightyellow', comman = support_number)
+what_support_coll = Button(root, text = 'Подсказать цвет карты', width = 20, height = 9, bg = 'lightyellow', comman = support_coll)
 
 select1 = Button(root, text = 'Сделать подсказку', width = 20, height = 9, bg = 'lightyellow', comman = support)
 select2 = Button(root, text = 'Сбросить карту', width = 20, height = 9, bg = 'lightyellow', comman = discard)
 select3 = Button(root, text = 'Положить на стол', width = 20, height = 9, bg = 'lightyellow', comman = put)
+Card_Help = Button(root, text = 'Типо карта', width = 20, height = 9, bg = 'lightyellow', comman = kind_of_support)
 
 select1.place(x = 320, y = 300)
 select2.place(x = 460, y = 300)
 select3.place(x = 600, y = 300)
 what_move.place(x = 321, y = 273)
+Card_Help.place(x = 700, y = 100)
 
 root.mainloop()
 
