@@ -1,45 +1,38 @@
 from tkinter import *
 
+def invis(*args):
+    for element in args:
+        element.place(x = -400, y = -400)
+
 def support():
     global support
     what_card.place(x = 200, y = 550)
-    select1.place(x = -400, y = -400)
-    select2.place(x = -400, y = -400)
-    select3.place(x = -400, y = -400)   
-    what_move.place(x = -400, y = -400)
+    invis(select1, select2, select3, what_move)
     support = 1
 
 def kind_of_support():
     global support
     if support == 1:
-        what_card.place(x = -400, y = -400)
+        invis(what_card)
         what_support_number.place(x = 320, y = 300)
         what_support_coll.place(x = 800, y = 300)
         support = 0
 
 def support_number():
-    what_support_number.place(x = -400, y = -400)
-    what_support_coll.place(x = -400, y = -400)
+    invis(what_support_number, what_support_coll)
     
 def support_coll():
-    what_support_number.place(x = -400, y = -400)
-    what_support_coll.place(x = -400, y = -400)
+    invis(what_support_number, what_support_coll)
     
 def discard():
     what_discard = Label(root, font = ('times', 20), text = 'Выбери карту', width = 30, height = 1, bg = 'darkgreen')
     what_discard.place(x = 400, y = 550)
-    select1.place(x = -400, y = -400)
-    select2.place(x = -400, y = -400)
-    select3.place(x = -400, y = -400)     
-    what_move.place(x = -400, y = -400)
+    invis(select1, select2, select3, what_move)
 
 def put():
     what_card = Label(root, font = ('times', 20), text = 'Выбери карту', width = 30, height = 1, bg = 'darkgreen')
     what_card.place(x = 400, y = 550)
-    select1.place(x = -400, y = -400)
-    select2.place(x = -400, y = -400)
-    select3.place(x = -400, y = -400)    
-    what_move.place(x = -400, y = -400)
+    invis(select1, select2, select3, what_move)
 
 
 root = Tk()
